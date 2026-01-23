@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Survey</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .title {
+            font-weight: bold;
+            color: #000;
+            margin-top: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<form>
+
+    <div class="section">
+        <p class="title">Market Research Survey</p>
+        <p>Please take a few moments to complete this satisfaction survey.</p>
+    </div>
+
+    <div class="section">
+        <p class="title">What is your age range?</p>
+        <select name="age">
+            <option value="18-24">18–24</option>
+            <option value="25-34">25–34</option>
+            <option value="35-54">35–54</option>
+            <option value="50+">50+</option>
+        </select>
+    </div>
+
+    <div class="section">
+        <p class="title">What is your yearly income range?</p>
+        <select name="income">
+            <option value="0-25000">$0 – $25,000</option>
+            <option value="25001-50000">$25,001 – $50,000</option>
+            <option value="50001-100000">$50,001 – $100,000</option>
+            <option value="100001+">$100,001+</option>
+        </select>
+    </div>
+
+    <div class="section">
+        <p class="title">Gender Identity</p>
+
+        <label>
+            <input type="radio" name="gender" value="male" onclick="toggleOtherGender()">
+            Male
+        </label><br>
+
+        <label>
+            <input type="radio" name="gender" value="female" onclick="toggleOtherGender()">
+            Female
+        </label><br>
+
+        <label>
+            <input type="radio" name="gender" value="nonbinary" onclick="toggleOtherGender()">
+            Nonbinary
+        </label><br>
+
+        <label>
+            <input type="radio" name="gender" value="other" id="genderOther" onclick="toggleOtherGender()">
+            Other
+        </label>
+
+
+    </div>
+
+    <div id="otherGenderBox" style="display: none; margin-top: 8px;">
+        <input
+                type="text"
+                id="otherGenderInput"
+                maxlength="250"
+                oninput="countChars()"
+                style="width: 300px;"
+        >
+        <br>
+        <small>
+            Maximum of 250 characters.
+            Currently Used: <span id="charCount">0</span> characters.
+        </small>
+    </div>
+
+
+    <div class="section">
+        <p class="title">
+            Which of the following products have you purchased in the last 2 months?
+            Please check all that apply.
+        </p>
+
+        <label><input type="checkbox" name="product[]" value="product1"> Product 1</label><br>
+        <label><input type="checkbox" name="product[]" value="product2"> Product 2</label><br>
+        <label><input type="checkbox" name="product[]" value="product3"> Product 3</label>
+    </div>
+
+    <div class="section">
+        <p class="title">How often would you use our new product?</p>
+
+        <label><input type="radio" name="frequency" value="daily"> Daily</label><br>
+        <label><input type="radio" name="frequency" value="weekly"> Weekly</label><br>
+        <label><input type="radio" name="frequency" value="monthly"> Monthly</label>
+    </div>
+
+    <div class="section">
+        <p class="title">What would you pay for the new product?</p>
+        $
+        <input type="number" name="price" step="0.01" > . <input type="number" name="price" step="0.01" >
+
+    </div>
+
+    <div class="section">
+        <p class="title">What features would you like to see in the new product?</p>
+        <input type="text" name="features" style="width: 300px;">
+    </div>
+
+    <p class="title">
+        Please rate your level of agreement with the following statements.
+    </p>
+
+    <table>
+        <tr>
+            <th></th>
+            <th>Strongly Disagree</th>
+            <th>Disagree</th>
+            <th>Neutral</th>
+            <th>Agree</th>
+            <th>Strongly Agree</th>
+        </tr>
+
+        <tr>
+            <td>Our products are priced fairly.</td>
+            <td><input type="radio" name="q1" value="1"></td>
+            <td><input type="radio" name="q1" value="2"></td>
+            <td><input type="radio" name="q1" value="3"></td>
+            <td><input type="radio" name="q1" value="4"></td>
+            <td><input type="radio" name="q1" value="5"></td>
+        </tr>
+
+        <tr>
+            <td>Our products are high quality.</td>
+            <td><input type="radio" name="q2" value="1"></td>
+            <td><input type="radio" name="q2" value="2"></td>
+            <td><input type="radio" name="q2" value="3"></td>
+            <td><input type="radio" name="q2" value="4"></td>
+            <td><input type="radio" name="q2" value="5"></td>
+        </tr>
+    </table>
+
+
+    <br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+
+<script>
+    function toggleOtherGender() {
+        const otherRadio = document.getElementById("genderOther");
+        const box = document.getElementById("otherGenderBox");
+
+        if (otherRadio.checked) {
+            box.style.display = "block";
+        } else {
+            box.style.display = "none";
+            document.getElementById("otherGenderInput").value = "";
+            document.getElementById("charCount").textContent = "0";
+        }
+    }
+
+    function countChars() {
+        const input = document.getElementById("otherGenderInput");
+        document.getElementById("charCount").textContent = input.value.length;
+    }
+</script>
+
+</html>
