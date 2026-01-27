@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 4</title>
+</head>
+<body>
+    <input id = "number1" type = "number"> Nhập số thứ 1: <br>
+    <input id = "number2" type = "number"> Nhập số thứ 2: <br>
+    <input id = "number3" type = "number"> Nhập số thứ 3: <br>
+    <button onclick="cal()">Calculate</button>
+    <p id = "res">here</p>
+<script>
+    function cal() {
+        let num1 = +document.getElementById("number1").value;
+        let num2 = +document.getElementById("number2").value;
+        let num3 = +document.getElementById("number3").value;
+
+        let max = num1;
+        if (max <= num2) {
+            max = num2;
+        }
+        if (max <= num3) {
+            max = num3;
+        }
+        document.getElementById("res").innerHTML = `<p><b>số lớn nhất bằng :</b> ${max}</p>`;
+    }
+</script>
+
+</body>
+</html>
