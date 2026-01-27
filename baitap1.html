@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai Tap 1</title>
+</head>
+<body>
+    <input id = "firstNum" type = "number" placeholder="123"> First Number <br> <br>
+    <input id = "secondNum" type = "number" placeholder="123"> Second Number
+    <p id = "result">Kết qủa tính toán: </p>
+    <p id = "result2">here </p>
+    <button onclick="cal()">
+        calculate
+    </button>
+    <script>
+          function cal() {
+              let a = +document.getElementById("firstNum").value;
+              let  b = +document.getElementById("secondNum").value;
+              let kq = a / b;
+              let res = a % b;
+              if (res === 0 && b != 0) {
+                  document.getElementById("result").innerHTML = `<b>Kết quả:</b> <span> ${kq} </span>`;
+                  document.getElementById("result2").innerHTML = "<b> Số chia hết</b>";
+              } else if (res != 0 && b != 0) {
+                  document.getElementById("result").innerHTML = `<b>Kết quả:</b> <span> ${kq} </span>`;
+                  document.getElementById("result2").innerHTML = "<b> Số không chia hết</b>";
+              } else {
+                  document.getElementById("result").innerHTML = `<b>Kết quả:</b> <span> không thể tính </span>`;
+                  document.getElementById("result2").innerHTML = " ";
+              }
+          }
+    </script>
+</body>
+</html>
