@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 2</title>
+</head>
+<body>
+    <p> Giả định vào lớp 10 >= 10 tuổi</p>
+    <input type="number" id="age" min="1" max="100"> Nhập tuổi:
+    <button onclick="cal()">Calculate</button>
+    <p id="result"></p>
+<script>
+    function cal() {
+        let age = +document.getElementById("age").value;
+
+        if (age < 10) {
+            document.getElementById("result").innerHTML = `<p>illegal <p> <br> </p>tuổi: ${age}</p>`;
+        } else if (age >= 10) {
+            document.getElementById("result").innerHTML = `<p>Legit <p> </p>tuổi: ${age}</p>`;
+        }
+    }
+</script>
+
+</body>
+</html>
