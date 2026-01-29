@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 5</title>
+</head>
+
+<body>
+<h1>Tính điểm trung bình</h1>
+
+<input id="d15" type="number"> Nhập điểm 15p <br>
+<input id="gk" type="number"> Nhập điểm giữa kỳ <br>
+<input id="ck" type="number"> Nhập điểm cuối kỳ <br>
+
+<button onclick="cal()">Calculate</button>
+
+<script>
+    function cal() {
+        let diem15 = +document.getElementById("d15").value;
+        let diemGk = +document.getElementById("gk").value;
+        let diemCk = +document.getElementById("ck").value;
+
+        let dtb = (diem15 + diemGk * 2 + diemCk * 3) / 6;
+        let xepLoai = "";
+
+        if (dtb >= 8) {
+            xepLoai = "Giỏi";
+        } else if (dtb >= 6.5) {
+            xepLoai = "Khá";
+        } else if (dtb >= 5) {
+            xepLoai = "Trung bình";
+        } else {
+            xepLoai = "Yếu";
+        }
+
+        alert(
+            "Điểm trung bình: " + dtb.toFixed(2) +
+            "\nXếp loại: " + xepLoai
+        );
+    }
+</script>
+
+</body>
+</html>
