@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+
+<script>
+    // Nhập dữ liệu
+    let weight = parseFloat(prompt("Nhập cân nặng (kg):"));
+    let height = parseFloat(prompt("Nhập chiều cao (m):"));
+
+    // Tính BMI
+    let bmi = weight / (height * height);
+
+    // In BMI
+    document.write("BMI = " + bmi.toFixed(2) + "<br>");
+
+    // Phân loại BMI
+    if (bmi < 18.5) {
+        document.write("Phân loại: Underweight");
+    } else if (bmi < 25.0) {
+        document.write("Phân loại: Normal");
+    } else if (bmi < 30.0) {
+        document.write("Phân loại: Overweight");
+    } else {
+        document.write("Phân loại: Obese");
+    }
+</script>
+
+</body>
+</html>
