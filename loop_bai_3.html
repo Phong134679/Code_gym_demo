@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>hienThiFibonacci</title>
+</head>
+<body>
+<button onclick="hienThiFibonacci()">Click Me</button>
+<script>
+  function hienThiFibonacci() {
+    let a = 0, b = 1;
+    let ketQua = "20 số Fibonacci đầu tiên:\n";
+
+    for (let i = 1; i <= 20; i++) {
+      ketQua += a + " ";
+      let next = a + b;
+      a = b;
+      b = next;
+    }
+
+    alert(ketQua);
+  }
+
+</script>
+</body>
+</html>

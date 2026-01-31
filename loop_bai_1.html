@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>100 numbers</title>
+</head>
+<body>
+<button onclick="cal()">Click Me</button>
+<div id = "output"></div>
+<script>
+    function cal() {
+        for (let i = 1; i <= 100; i++) {
+            document.getElementById('output').innerHTML += `<p>số thứ: ${i}</p>`;
+
+            if (i === 99) {
+                alert("Done");
+                break;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
