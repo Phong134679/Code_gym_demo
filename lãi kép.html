@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>lãi kép</title>
+</head>
+
+<body>
+<button onclick="tinhLaiNganHang()"> Calculate</button>
+</body>
+
+<script>
+  function tinhLaiNganHang() {
+    let tienGoc = parseFloat(prompt("Nhập số tiền ban đầu:"));
+    let thang = parseInt(prompt("Nhập số tháng gửi:"));
+    let laiSuat = parseFloat(prompt("Nhập lãi suất hàng tháng (%):"));
+
+    let tienCuoi = tienGoc * Math.pow(1 + laiSuat / 100, thang);
+
+    alert("Số tiền sau " + thang + " tháng là: " + tienCuoi.toFixed(2));
+  }
+</script>
+</html>

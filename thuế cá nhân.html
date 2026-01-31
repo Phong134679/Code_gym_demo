@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>tinhThueTNCN</title>
+</head>
+
+<body>
+<button onclick="tinhThueTNCN()"> Calculate</button>
+</body>
+
+<script>
+  function tinhThueTNCN() {
+    let thuNhap = parseFloat(prompt("Nhập thu nhập (triệu đồng):"));
+    let thue = 0;
+
+    if (thuNhap <= 5) {
+      thue = thuNhap * 0.05;
+    } else if (thuNhap <= 10) {
+      thue = 5 * 0.05 + (thuNhap - 5) * 0.1;
+    } else {
+      thue = 5 * 0.05 + 5 * 0.1 + (thuNhap - 10) * 0.15;
+    }
+
+    alert("Thuế thu nhập cá nhân phải nộp: " + thue + " triệu đồng");
+  }
+
+
+
+</script>
+</html>

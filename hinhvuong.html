@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>diện tích hình vuông</title>
+</head>
+
+<body>
+    <button onclick="calculate()"> Calculate</button>
+</body>
+
+<script>
+    function calculate() {
+        let a = Number(prompt("Nhập cạnh a"))
+        if (a < 0 || isNaN(a) || a === 0) {
+            alert("cạnh phải là số khác 0")
+        } else {
+            let square = a*a
+            alert(square)
+        }
+    }
+</script>
+</html>

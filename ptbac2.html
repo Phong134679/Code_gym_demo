@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>phương trình bậc 2</title>
+</head>
+
+<body>
+<button onclick="calculate()"> Calculate</button>
+</body>
+
+<script>
+  function calculate() {
+    let a = parseFloat(prompt("Nhập hệ số a:"));
+    let b = parseFloat(prompt("Nhập hệ số b:"));
+    let c = parseFloat(prompt("Nhập hệ số c:"));
+
+    if (a === 0) {
+      alert("Đây không phải phương trình bậc 2");
+      return;
+    }
+
+    let delta = b * b - 4 * a * c;
+
+    if (delta < 0) {
+      alert("Phương trình vô nghiệm");
+    } else if (delta === 0) {
+      let x = -b / (2 * a);
+      alert("Phương trình có nghiệm kép x = " + x);
+    } else {
+      let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+      let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+      alert("Phương trình có 2 nghiệm:\n x1 = " + x1 + "\n x2 = " + x2);
+    }
+  }
+
+
+</script>
+</html>
