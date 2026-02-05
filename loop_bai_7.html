@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fizzbuzz</title>
+</head>
+<body>
+  <button onclick="lammau(0)">Try it</button>
+  <div id="here"></div>
+<script>
+  function lammau(i) {
+    if(i > 100) return;
+    document.getElementById('here').innerHTML += `<p id = ${i}>số thứ: ${i}</p>`;
+      if(i % 5 === 0 && i % 3 === 0) {
+          document.getElementById(i).innerHTML += ` FizzBuzz`;
+      }else
+    if (i % 3 === 0) {
+        document.getElementById(i).innerHTML += ` Fizz`;
+    } else if(i % 5 === 0) {
+        document.getElementById(i).innerHTML += ` Buzz`;
+    }
+    lammau(++i);
+  }
+</script>
+</body>
+</html>
