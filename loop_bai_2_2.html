@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giai thua</title>
+</head>
+<body>
+<input type = "number" id = "number"> here
+<button onclick="giaithua()">button</button>
+<p id="output"></p>
+<script>
+  function giaithua() {
+    let n = parseInt(document.getElementById("number").value);
+    let result = 1;
+
+    for (let i = 1; i <= n; i++) {
+      result *= i;
+    }
+
+    document.getElementById("output").innerText =
+            n + "! = " + result;
+  }
+
+</script>
+</body>
+</html>

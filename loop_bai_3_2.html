@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tam giac vuong</title>
+    <style>
+        #output {
+            white-space: pre;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+<input type="number" id="rows" placeholder="Nhập số dòng" />
+
+<button onclick="topLeft()">Góc trên trái</button>
+<button onclick="topRight()">Góc trên phải</button>
+<button onclick="bottomLeft()">Góc dưới trái</button>
+<button onclick="bottomRight()">Góc dưới phải</button>
+
+<div id="output"></div>
+
+<script>
+    function getN() {
+        return parseInt(document.getElementById("rows").value);
+    }
+
+    function clear() {
+        document.getElementById("output").innerText = "";
+    }
+
+    function print(line) {
+        document.getElementById("output").innerText += line + "\n";
+    }
+
+    // Góc trên trái
+    function topLeft() {
+        clear();
+        let n = getN();
+        for (let i = 0; i < n; i++) {
+            print("*".repeat(n - i));
+        }
+    }
+
+    // Góc trên phải
+    function topRight() {
+        clear();
+        let n = getN();
+        for (let i = 0; i < n; i++) {
+            print(" ".repeat(i) + "*".repeat(n - i));
+        }
+    }
+
+    // Góc dưới trái
+    function bottomLeft() {
+        clear();
+        let n = getN();
+        for (let i = 0; i < n; i++) {
+            print("*".repeat(i + 1));
+        }
+    }
+
+    // Góc dưới phải
+    function bottomRight() {
+        clear();
+        let n = getN();
+        for (let i = 0; i < n; i++) {
+            print(" ".repeat(n - i - 1) + "*".repeat(i + 1));
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="rows" placeholder="Số dòng">
+<input type="number" id="cols" placeholder="Số cột">
+<button onclick="hollowRectangle()">In hình chữ nhật rỗng</button>
+
+<div id="output" style="white-space: pre; font-family: monospace;"></div>
+
+<script>
+  function hollowRectangle() {
+    let rows = parseInt(document.getElementById("rows").value);
+    let cols = parseInt(document.getElementById("cols").value);
+
+    let output = "";
+
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+
+        // Dòng trên hoặc dòng dưới
+        if (i === 0 || i === rows - 1) {
+          output += "*";
+        }
+        // Dòng giữa
+        else {
+          if (j === 0 || j === cols - 1) {
+            output += "*";
+          } else {
+            output += " ";
+          }
+        }
+      }
+      output += "\n";
+    }
+
+    document.getElementById("output").innerText = output;
+  }
+
+</script>
+</body>
+</html>
