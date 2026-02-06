@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bảng cửu chương</title>
+</head>
+<body>
+
+<button onclick="printMultiplicationTable()">In bảng cửu chương</button>
+
+<div id="output" style="white-space: pre; font-family: monospace;"></div>
+
+<script>
+  function printMultiplicationTable() {
+    let result = "";
+
+    for (let i = 1; i <= 9; i++) {
+      result += "Bảng cửu chương " + i + "\n";
+
+      for (let j = 1; j <= 10; j++) {
+        result += i + " x " + j + " = " + (i * j) + "\n";
+      }
+
+      result += "\n"; // dòng trống giữa các bảng
+    }
+
+    document.getElementById("output").innerText = result;
+  }
+</script>
+
+</body>
+</html>
