@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 5</title>
+</head>
+<body>
+<script>
+    let arr = [];
+
+    for (let i = 0; i < 10; i++) {
+
+        let value;
+
+        while (true) {
+            let input = prompt(`Nhập số nguyên thứ ${i + 1}:`);
+
+            // Nếu bấm Cancel
+            if (input === null) {
+                alert("Bạn phải nhập dữ liệu.");
+                continue;
+            }
+
+            input = input.trim();
+
+            // Nếu rỗng
+            if (input === "") {
+                alert("Không được để trống.");
+                continue;
+            }
+
+            value = Number(input);
+
+            // Kiểm tra có phải số không
+            if (isNaN(value)) {
+                alert("Phải nhập số.");
+                continue;
+            }
+
+            // Kiểm tra số nguyên
+            if (!Number.isInteger(value)) {
+                alert("Phải nhập số nguyên.");
+                continue;
+            }
+
+            break; // hợp lệ → thoát while
+        }
+
+        arr.push(value);
+    }
+
+    console.log("Mảng:", arr);
+
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+            count++;
+        }
+    }
+
+    console.log("Số lượng phần tử >= 10 là:", count);
+</script>
+</body>
+</html>

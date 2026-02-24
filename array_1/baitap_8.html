@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuickSort Descending</title>
+</head>
+<body>
+<script>
+
+    // 1. Khởi tạo mảng 10 số nguyên random (-50 đến 50)
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr.push(Math.floor(Math.random() * 101) - 50);
+    }
+
+    console.log("Original array:", arr);
+
+
+    // 2. Hàm QuickSort (giảm dần)
+    function quickSort(array, left, right) {
+        if (left >= right) return;
+
+        let pivot = array[Math.floor((left + right) / 2)];
+        let index = partition(array, left, right, pivot);
+
+        quickSort(array, left, index - 1);
+        quickSort(array, index, right);
+    }
+
+
+    // 3. Hàm partition (cho thứ tự giảm dần)
+    function partition(array, left, right, pivot) {
+
+        while (left <= right) {
+
+            // Vì sắp xếp giảm dần nên đảo điều kiện
+            while (array[left] > pivot) {
+                left++;
+            }
+
+            while (array[right] < pivot) {
+                right--;
+            }
+
+            if (left <= right) {
+                let temp = array[left];
+                array[left] = array[right];
+                array[right] = temp;
+
+                left++;
+                right--;
+            }
+        }
+
+        return left;
+    }
+
+
+    // 4. Gọi QuickSort
+    quickSort(arr, 0, arr.length - 1);
+
+    console.log("Sorted array (descending):", arr);
+
+</script>
+</body>
+</html>

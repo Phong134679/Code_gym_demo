@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 1</title>
+</head>
+<body>
+<script>
+    // Khởi tạo mảng 10 số nguyên (tạo ngẫu nhiên từ 0 đến 20)
+    let arr = [];
+
+    for (let i = 0; i < 10; i++) {
+        arr.push(Number(prompt(`nhập số thứ ${i+1}:`)));
+    }
+
+    // Hiển thị mảng
+    console.log("Mảng:", arr);
+
+    // Đếm số phần tử >= 10
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+            count++;
+        }
+    }
+
+    // Hiển thị kết quả
+    console.log("Số lượng phần tử >= 10 là:", count);
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 7</title>
+</head>
+<body>
+<script>
+
+    // 1. Khởi tạo mảng 10 số nguyên random (-10 đến 10)
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr.push(Math.floor(Math.random() * 21) - 10);
+    }
+
+    console.log("Original array:", arr);
+
+    // 2. Hàm nhập số nguyên hợp lệ
+    function getValidInteger() {
+        let input;
+        while (true) {
+            input = prompt("Enter integer V:");
+
+            if (input === null) return null;
+
+            if (!isNaN(input) && Number.isInteger(Number(input))) {
+                return Number(input);
+            } else {
+                alert("Invalid input. Please enter an integer.");
+            }
+        }
+    }
+
+    let V = getValidInteger();
+
+    if (V !== null) {
+
+        let count = 0; // đếm số lần xóa
+
+        // 3. Duyệt và dùng splice
+        for (let i = 0; i < arr.length; i++) {
+
+            if (arr[i] === V) {
+                arr.splice(i, 1); // xóa phần tử tại vị trí i
+                count++;
+                i--; // quan trọng: lùi lại để không bỏ sót
+            }
+        }
+
+        // 4. Thêm số 0 vào cuối để đủ 10 phần tử
+        while (arr.length < 10) {
+            arr.push(0);
+        }
+
+        console.log("Updated array:", arr);
+    }
+
+</script>
+</body>
+</html>

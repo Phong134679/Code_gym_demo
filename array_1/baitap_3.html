@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 3</title>
+</head>
+<body>
+<button id = "button" onclick="findMaxValue()">lick me</button>
+<script>
+    let arr = [];
+    let n;
+    for (let i = 0; i < 10; i++) {
+        n = Math.floor((Math.random() * 21));
+        arr.push(n);
+    }
+    console.log(arr);
+    function avgVal() {
+        let sum = 0;
+        for (let value of arr) {
+            sum += value;
+        }
+        console.log(sum/arr.length);
+    }
+    function findMaxValue() {
+        let maxValue = arr[0]
+        for (let i = 0; i < arr.length; i++) {
+            if (maxValue < arr[i]) {
+                maxValue = arr[i];
+            }
+        }
+        console.log("số lớn nhất: ",maxValue);
+        avgVal();
+    }
+</script>
+</body>
+</html>

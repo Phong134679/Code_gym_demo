@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 2</title>
+</head>
+<body>
+    <button id = "button" onclick="cal()">lick me</button>
+<script>
+    let arr = [];
+    let n = undefined;
+    for (let i = 0; i < 10; i++) {
+        n = Math.floor((Math.random() * 21));
+        arr.push(n);
+    }
+    console.log(arr);
+    function cal() {
+        let maxValue = arr[0]
+        let maxValuePosition = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (maxValue < arr[i]) {
+                maxValue = arr[i];
+                maxValuePosition = i;
+            }
+        }
+        console.log("số lớn nhất: ",maxValue);
+        console.log("tại vị trí: ",maxValuePosition);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 6</title>
+</head>
+<body>
+<h2>Check if V is in the Array</h2>
+
+<script>
+    // Tạo mảng 10 phần tử số nguyên random (từ -100 đến 100)
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        let randomNumber = Math.floor(Math.random() * 201) - 100;
+        array.push(randomNumber);
+    }
+
+    console.log("Array:", array);
+
+    // Hàm yêu cầu nhập số nguyên hợp lệ
+    function getValidInteger() {
+        let input;
+        while (true) {
+            input = prompt("Enter an integer value V:");
+
+            if (input === null) {
+                alert("Input cancelled.");
+                return null;
+            }
+
+            if (!isNaN(input) && Number.isInteger(Number(input))) {
+                return Number(input);
+            } else {
+                alert("Invalid input. Please enter a valid integer.");
+            }
+        }
+    }
+
+    let V = getValidInteger();
+
+    if (V !== null) {
+        let found = false;
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === V) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            console.log("V is in the array");
+            alert("V is in the array");
+        } else {
+            console.log("V is not in the array");
+            alert("V is not in the array");
+        }
+    }
+</script>
+</body>
+</html>
