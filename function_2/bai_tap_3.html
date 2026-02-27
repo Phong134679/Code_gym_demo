@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+
+<script>
+
+    // Hàm kiểm tra giá trị hợp lệ
+    function isValidInput(value) {
+        if (value === null) return false;            // bấm Cancel
+        if (value.trim() === "") return false;       // rỗng
+        if (isNaN(value)) return false;              // không phải số
+
+        let number = Number(value);
+
+        if (!Number.isInteger(number)) return false; // không phải số nguyên
+        if (number < 0) return false;                // số âm
+
+        return true;
+    }
+
+    // Hàm tính giai thừa
+    function factorial(n) {
+        let result = 1;  // biến khai báo ngoài vòng lặp
+
+        for (let i = 1; i <= n; i++) {
+            result *= i;
+        }
+
+        return result;
+    }
+
+    // Nhập dữ liệu
+    let input = prompt("Nhập một số nguyên không âm:");
+
+    if (isValidInput(input)) {
+        let number = Number(input);
+        let output = factorial(number);
+        document.write(number + "! = " + output);
+    } else {
+        document.write("Dữ liệu không hợp lệ. Vui lòng nhập số nguyên không âm.");
+    }
+
+</script>
+
+</body>
+</html>

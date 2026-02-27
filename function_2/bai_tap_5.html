@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nhỏ nhất</title>
+</head>
+<body>
+
+<script>
+
+    // Hàm kiểm tra số nguyên hợp lệ
+    function isValidInteger(value) {
+        if (value === null) return false;
+        if (value.trim() === "") return false;
+        if (isNaN(value)) return false;
+
+        let number = Number(value);
+
+        if (!Number.isInteger(number)) return false;
+
+        return true;
+    }
+
+    // Hàm tìm số nhỏ nhất
+    function findMin(a, b, c) {
+        let min = a;
+
+        if (b < min) {
+            min = b;
+        }
+
+        if (c < min) {
+            min = c;
+        }
+
+        return min;
+    }
+
+    let input1 = prompt("Nhập số nguyên thứ nhất:");
+    let input2 = prompt("Nhập số nguyên thứ hai:");
+    let input3 = prompt("Nhập số nguyên thứ ba:");
+
+    if (isValidInteger(input1) && isValidInteger(input2) && isValidInteger(input3)) {
+
+        let a = Number(input1);
+        let b = Number(input2);
+        let c = Number(input3);
+
+        let result = findMin(a, b, c);
+
+        document.write("Số nguyên nhỏ nhất là: " + result);
+
+    } else {
+        document.write("Dữ liệu nhập vào không hợp lệ. Vui lòng nhập số nguyên.");
+    }
+
+</script>
+
+</body>
+</html>

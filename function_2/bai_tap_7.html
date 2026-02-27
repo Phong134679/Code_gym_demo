@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chỗ hai số nguyên</title>
+</head>
+<body>
+
+<script>
+
+    // Hàm kiểm tra số nguyên hợp lệ
+    function isValidInteger(value) {
+        if (value === null) return false;          // Cancel
+        if (value.trim() === "") return false;     // Rỗng
+        if (isNaN(value)) return false;            // Không phải số
+
+        let number = Number(value);
+
+        if (!Number.isInteger(number)) return false; // Không phải số nguyên
+
+        return true;
+    }
+
+    let input1 = prompt("Nhập số nguyên thứ nhất:");
+    let input2 = prompt("Nhập số nguyên thứ hai:");
+
+    if (isValidInteger(input1) && isValidInteger(input2)) {
+
+        let a = Number(input1);
+        let b = Number(input2);
+
+        document.write("Trước khi đổi: a = " + a + ", b = " + b + "<br>");
+
+        // Swap trực tiếp
+        let temp = a;
+        a = b;
+        b = temp;
+
+        document.write("Sau khi đổi: a = " + a + ", b = " + b);
+
+    } else {
+        document.write("Dữ liệu nhập vào không hợp lệ.");
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự</title>
+</head>
+<body>
+
+<script>
+    // Nhập mảng ký tự
+    let inputArray = prompt("Nhập các ký tự cách nhau bởi dấu phẩy (ví dụ: a,b,c,a):");
+
+    // Nhập ký tự cần kiểm tra
+    let inputChar = prompt("Nhập 1 ký tự cần kiểm tra:");
+
+    // Tách chuỗi thành mảng
+    let arr = inputArray.split(",");
+
+    let count = 0;
+
+    // Duyệt từng phần tử
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === inputChar) {
+            count++;
+        }
+    }
+
+    // Kiểm tra kết quả
+    if (count > 0) {
+        alert("Số lần xuất hiện: " + count);
+    } else {
+        alert(-1);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        input {
+            width: 300px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            margin-left: 10px;
+        }
+        p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Đảo ngược mảng số nguyên</h2>
+
+<input type="text" id="arrayInput" placeholder="Ví dụ: 1,2,3,4,5">
+<button onclick="handleReverse()">Đảo mảng</button>
+
+<p id="result"></p>
+
+<script>
+    // Hàm kiểm tra số nguyên
+    function isInteger(value) {
+        return Number.isInteger(value);
+    }
+
+    // Hàm đảo mảng bằng swap
+    function reverseArray(arr) {
+        for (let i = 0; i < arr.length / 2; i++) {
+            let temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        return arr;
+    }
+
+    // Hàm xử lý khi bấm nút
+    function handleReverse() {
+        let input = document.getElementById("arrayInput").value.trim();
+        let result = document.getElementById("result");
+
+        if (input === "") {
+            result.innerText = "Dữ liệu không hợp lệ.";
+            return;
+        }
+
+        let arr = input.split(",").map(item => Number(item.trim()));
+
+        let isValid = arr.every(isInteger);
+
+        if (!isValid) {
+            result.innerText = "Mảng phải chứa toàn số nguyên.";
+            return;
+        }
+
+        reverseArray(arr);
+
+        result.innerText = "Mảng sau khi đảo: " + arr.join(", ");
+    }
+</script>
+
+</body>
+</html>
