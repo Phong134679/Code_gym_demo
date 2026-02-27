@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <title> 2d </title>
+    </head>
+
+    <body>
+        <script>
+            let num = Number(prompt("nhập số dòng cột: "));
+            let cols = Array();
+            for (let i = 1; i <= num; i++) {
+                let rows = Array();
+                for (let j = 1; j <= num; j++) {
+                    let index = Math.floor(Math.random() * 101);
+                    rows[j] = index;
+                }
+                cols[i] = rows;
+            }
+            console.log(cols);
+
+            for (let i = 1; i < cols.length; i++) {
+                console.log(`row ${i}`);
+                for (let j = 1; j < cols[i].length; j++) {
+                    console.log(cols[i][j]);
+                }
+            }
+        </script>
+    </body>
+
+</html>

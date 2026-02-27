@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Thay '-' bằng '_'</title>
+</head>
+<body>
+
+<h2>Mở F12 → Console để xem kết quả</h2>
+
+<script>
+    // Nhập kích thước mảng
+    let size = Number(prompt("Nhập kích thước mảng:"));
+
+    let arr = [];
+
+    // Nhập từng phần tử
+    for (let i = 0; i < size; i++) {
+        arr[i] = prompt("Nhập ký tự tại vị trí " + i + ":");
+    }
+
+    console.log("Mảng ban đầu:", arr);
+
+    // Duyệt và thay thế
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "-") {
+            arr[i] = "_";
+        }
+    }
+
+    console.log("Mảng sau khi thay thế:", arr);
+</script>
+
+</body>
+</html>

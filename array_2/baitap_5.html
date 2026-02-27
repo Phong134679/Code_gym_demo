@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh hai chuỗi</title>
+</head>
+<body>
+
+<h2>Mở F12 → Console để xem kết quả</h2>
+
+<script>
+    function compareStrings(str1, str2) {
+
+        // Bước 1: So sánh độ dài
+        if (str1.length !== str2.length) {
+            return false;
+        }
+
+        // Bước 2: So sánh từng ký tự
+        for (let i = 0; i < str1.length; i++) {
+            if (str1[i] !== str2[i]) {
+                return false;
+            }
+        }
+
+        // Nếu không có ký tự nào khác
+        return true;
+    }
+
+    // Nhập dữ liệu
+    let string1 = prompt("Nhập chuỗi thứ nhất:");
+    let string2 = prompt("Nhập chuỗi thứ hai:");
+
+    // Gọi hàm
+    let result = compareStrings(string1, string2);
+
+    console.log("Chuỗi 1:", string1);
+    console.log("Chuỗi 2:", string2);
+
+    if (result) {
+        console.log("Hai chuỗi GIỐNG nhau.");
+    } else {
+        console.log("Hai chuỗi KHÔNG giống nhau.");
+    }
+</script>
+
+</body>
+</html>

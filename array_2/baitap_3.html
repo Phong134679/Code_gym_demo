@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm ký tự số trong mảng</title>
+</head>
+<body>
+
+<h2>Mở F12 → Console để xem kết quả</h2>
+
+<script>
+    // Nhập kích thước mảng
+    let size = Number(prompt("Nhập kích thước mảng:"));
+
+    let arr = [];
+
+    // Nhập từng phần tử
+    for (let i = 0; i < size; i++) {
+        arr[i] = prompt("Nhập ký tự cho vị trí " + i + ":");
+    }
+
+    let count = 0;
+
+    // Duyệt mảng và kiểm tra ký tự số
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= '0' && arr[i] <= '9') {
+            count++;
+        }
+    }
+
+    console.log("Mảng đã nhập:", arr);
+    console.log("Số ký tự số (0-9) trong mảng là:", count);
+</script>
+
+</body>
+</html>

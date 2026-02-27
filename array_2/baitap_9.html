@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Nối hai mảng</title>
+</head>
+<body>
+
+<h2>Nhập mảng A (10 số, cách nhau bởi dấu phẩy)</h2>
+<input type="text" id="arrayA" placeholder="Ví dụ: 1,2,3,4,5,6,7,8,9,10">
+
+<h2>Nhập mảng B (10 số, cách nhau bởi dấu phẩy)</h2>
+<input type="text" id="arrayB" placeholder="Ví dụ: 11,12,13,14,15,16,17,18,19,20">
+
+<br><br>
+<button onclick="noiMang()">Nối mảng</button>
+
+<h2>Kết quả mảng C:</h2>
+<p id="result"></p>
+
+<script>
+  function noiMang() {
+    // Lấy dữ liệu từ input
+    let a = document.getElementById("arrayA").value.split(",").map(Number);
+    let b = document.getElementById("arrayB").value.split(",").map(Number);
+
+    // Kiểm tra đủ 10 phần tử
+    if (a.length !== 10 || b.length !== 10) {
+      alert("Mỗi mảng phải có đúng 10 phần tử!");
+      return;
+    }
+
+    // Tạo mảng c gồm 20 phần tử
+    let c = new Array(20);
+
+    // Chép mảng b vào c (vị trí 0 -> 9)
+    for (let i = 0; i < 10; i++) {
+      c[i] = b[i];
+    }
+
+    // Chép mảng a vào c (vị trí 10 -> 19)
+    for (let i = 0; i < 10; i++) {
+      c[i + 10] = a[i];
+    }
+
+    // Hiển thị kết quả
+    document.getElementById("result").innerText = c.join(", ");
+  }
+</script>
+
+</body>
+</html>

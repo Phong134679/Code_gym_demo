@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm ký tự (không tính khoảng trắng)</title>
+</head>
+<body>
+
+<h2>Mở F12 → Console để xem kết quả</h2>
+
+<script>
+    let str = prompt("Nhập chuỗi:");
+
+    let count = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== ' ') {
+            count++;
+        }
+    }
+
+    console.log("Chuỗi:", str);
+    console.log("Số ký tự (không tính khoảng trắng):", count);
+</script>
+
+</body>
+</html>
