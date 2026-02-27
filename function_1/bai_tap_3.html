@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 3 tham số</title>
+</head>
+<body>
+
+<script>
+    function compareAndSum(a, b) {
+        if (a > b) {
+            alert("Tham số thứ nhất lớn hơn tham số thứ hai.");
+            return null; // không trả về tổng
+        } else {
+            return a + b;
+        }
+    }
+
+    // Nhập dữ liệu
+    let a = Number(prompt("Nhập tham số thứ nhất:"));
+    let b = Number(prompt("Nhập tham số thứ hai:"));
+
+    let result = compareAndSum(a, b);
+
+    if (result !== null) {
+        document.write("Tổng của hai tham số là: " + result);
+    }
+</script>
+
+</body>
+</html>

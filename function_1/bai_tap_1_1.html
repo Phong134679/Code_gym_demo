@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tính bình phương</title>
+</head>
+<body>
+
+<script>
+    function squareNumber(number) {
+        return number * number;
+    }
+
+    let input = prompt("Nhập một số bất kỳ:");
+
+    // Kiểm tra hợp lệ
+    if (input === null || input.trim() === "" || isNaN(input)) {
+        document.write("Dữ liệu không hợp lệ. Vui lòng nhập một số.");
+    } else {
+        let num = Number(input);
+        let result = squareNumber(num);
+        document.write("Bình phương của " + num + " là: " + result);
+    }
+</script>
+
+</body>
+</html>

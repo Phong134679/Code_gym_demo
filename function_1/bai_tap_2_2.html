@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hình tròn</title>
+</head>
+<body>
+
+<script>
+    function circleArea(radius) {
+        return Math.PI * radius * radius;
+    }
+
+    function circlePerimeter(radius) {
+        return 2 * Math.PI * radius;
+    }
+
+    let input = prompt("Nhập bán kính hình tròn:");
+
+    // Kiểm tra hợp lệ
+    if (input === null || input.trim() === "" || isNaN(input)) {
+        document.write("Dữ liệu không hợp lệ. Vui lòng nhập một số.");
+    } else {
+        let r = Number(input);
+
+        if (r <= 0) {
+            document.write("Bán kính phải lớn hơn 0.");
+        } else {
+            let area = circleArea(r);
+            let perimeter = circlePerimeter(r);
+
+            document.write("Bán kính: " + r + "<br>");
+            document.write("Chu vi: " + perimeter.toFixed(2) + "<br>");
+            document.write("Diện tích: " + area.toFixed(2));
+        }
+    }
+</script>
+
+</body>
+</html>
