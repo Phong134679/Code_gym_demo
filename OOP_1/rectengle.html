@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rectengle object</title>
+</head>
+<body>
+  <pre id="draw"></pre>
+  <div id="here"></div>
+  <script>
+    class Rectengle {
+      length;
+      width;
+
+      constructor(length, width) {
+        this.length = length;
+        this.width = width;
+      }
+
+      dientich() {
+        return this.length *  this.width;
+      }
+
+      chuvi() {
+        return (this.length + this.width) * 2;
+      }
+      draw() {
+        let result = "";
+
+        for (let i = 0; i < this.width; i++) {
+          if (i === 0 || i === this.width - 1) {
+            result += "*".repeat(this.length);
+          } else {
+            result += "*" + " ".repeat(this.length) + "*";
+          }
+          result += "\n";
+        }
+        document.getElementById("draw").textContent = result;
+      }
+    }
+    let rectengle = new Rectengle(10, 8);
+    document.querySelector("#here").innerHTML = `<p>length: ${rectengle.length}, width: ${rectengle.width}</p>`;
+
+    console.log(rectengle.dientich());
+    console.log(rectengle.chuvi());
+    rectengle.draw();
+  </script>
+</body>
+</html>

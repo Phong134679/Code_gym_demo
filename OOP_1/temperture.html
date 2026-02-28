@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>temperture object</title>
+</head>
+<body>
+    <script>
+        class temperture {
+            constructor (Celsius, Fahrenheit) {
+                this.Celsius = Celsius;
+                this.Fahrenheit = Fahrenheit;
+            }
+            convertToFahrenheit (Celsius) {
+                return this.Celsius * 9 / 5 + 32;
+            }
+            convertToKelvin (Celsius) {
+                return this.Celsius + 273.15;
+            }
+        }
+
+        let EnvironmentTemperter = new temperture(25);
+        EnvironmentTemperter.Fahrenheit = EnvironmentTemperter.convertToFahrenheit(EnvironmentTemperter.Celsius);
+        console.log(EnvironmentTemperter);
+        console.log ("Nhiệt độ F: ", EnvironmentTemperter.Fahrenheit);
+        console.log ("Nhiệt độ K: ", EnvironmentTemperter.convertToKelvin());
+    </script>
+</body>
+</html>
