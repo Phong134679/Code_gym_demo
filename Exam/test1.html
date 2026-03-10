@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<input type="number" id="length">
+<button onclick="average()">Test</button>
+
+<script>
+    let list = [];
+    let listDiv3 = [];
+
+    function inputNumber(message) {
+        while (true) {
+            let value = prompt(message);
+
+            if (value === null) {
+                alert("Bạn phải nhập một số!");
+                continue;
+            }
+
+            let num = Number(value);
+
+            if (!isNaN(num)) {
+                return num;
+            }
+
+            alert("Dữ liệu không hợp lệ! Vui lòng nhập số nguyên hoặc số thực.");
+        }
+    }
+
+    function average() {
+
+        list = [];
+        listDiv3 = [];
+
+        let length = Number(document.getElementById("length").value);
+        let sum = 0;
+
+        for (let i = 1; i <= length; i++) {
+
+            let number = inputNumber(`Nhập số thứ ${i}:`);
+
+            list.push(number);
+
+            if (number % 3 === 0) {
+                listDiv3.push(number);
+                sum += number;
+            }
+        }
+
+        console.log("Toàn bộ mảng:", list);
+
+        if (listDiv3.length > 0) {
+            console.log("Trung bình các số chia hết cho 3:", sum / listDiv3.length);
+        } else {
+            console.log("Không có số nào chia hết cho 3");
+        }
+    }
+</script>
+</body>
+</html>

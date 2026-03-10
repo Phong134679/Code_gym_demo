@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test4</title>
+</head>
+
+<body>
+
+<div id="teiburu"></div>
+
+<script>
+
+  class Workers {
+    constructor(name, dateOfBirth, diaChi, salery, position) {
+      this.stt = 0;
+      this.name = name;
+      this.dateOfBirth = dateOfBirth;
+      this.diaChi = diaChi;
+      this.salery = salery;
+      this.position = position;
+    }
+  }
+
+  let workers = [
+    new Workers("Nguyen Van An", "1-1-1998", "Ha Noi", 8000, "Developer"),
+    new Workers("Tran Thi Binh", "2-2-1995", "Da Nang", 7500, "Designer"),
+    new Workers("Le Van Cuong", "2-2-1992", "Ho Chi Minh", 9000, "Manager"),
+    new Workers("Pham Thi Lan", "2-2-2000", "Can Tho", 7000, "Tester")
+  ];
+
+  function sortWorkers() {
+
+    for (let i = 0; i < workers.length - 1; i++) {
+
+      for (let j = 0; j < workers.length - i - 1; j++) {
+
+        if (workers[j].name > workers[j + 1].name) {
+
+          let temp = workers[j];
+          workers[j] = workers[j + 1];
+          workers[j + 1] = temp;
+
+        }
+
+      }
+
+    }
+
+    for (let i = 0; i < workers.length; i++) {
+      workers[i].stt = i + 1;
+    }
+
+  }
+
+  function displayTable() {
+
+    sortWorkers();
+
+    let table = "<table border='1' width='1000px'>";
+
+    table += "<tr>"+
+            "<th>STT</th>"+
+            "<th>Name</th>"+
+            "<th>Date of Birth</th>"+
+            "<th>Dia Chi</th>"+
+            "<th>Salary</th>"+
+            "<th>Position</th>"+
+            "</tr>";
+
+    for(let i = 0; i < workers.length; i++) {
+
+      table += `<tr>
+                <td>${workers[i].stt}</td>
+                <td>${workers[i].name}</td>
+                <td>${workers[i].dateOfBirth}</td>
+                <td>${workers[i].diaChi}</td>
+                <td>${workers[i].salery}</td>
+                <td>${workers[i].position}</td>
+              </tr>`;
+    }
+
+    table += "</table>";
+
+    document.getElementById("teiburu").innerHTML = table;
+  }
+
+  displayTable();
+
+</script>
+
+</body>
+</html>

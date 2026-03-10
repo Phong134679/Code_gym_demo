@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test 2</title>
+</head>
+<body>
+<button onclick="parfecto()">Lick me</button>
+
+<script>
+    function inputNumber(message) {
+        while (true) {
+            let value = prompt(message);
+
+            if (value === null) {
+                alert("Bạn phải nhập một số!");
+                continue;
+            }
+
+            let num = Number(value);
+
+            if (!isNaN(num)) {
+                return num;
+            }
+
+            alert("Dữ liệu không hợp lệ! Vui lòng nhập số nguyên hoặc số thực.");
+        }
+    }
+
+    function isPerfect(number) {
+        let sum = 1;
+
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+
+                sum += i;
+
+                if (i !== number / i) {
+                    sum += number / i;
+                }
+            }
+        }
+
+        return sum === number && number !== 1;
+    }
+
+    function parfecto() {
+
+        let number = inputNumber("Nhập số để kiểm tra:");
+
+        console.log(isPerfect(number));
+    }
+</script>
+</body>
+</html>
